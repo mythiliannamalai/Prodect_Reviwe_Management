@@ -110,5 +110,14 @@ namespace ProductReviewManagementlinq
                 + " " + "Rating:- " + list.Rating + " " + "Review:- " + list.Review + " " + "IsLike :- " + list.IsLike);
             }
         }
+        //UC-7 Retrieve only userId and review from the list for all records.
+        public void RetrieveUserIDAndReview(List<ProductReview> ProductReview)
+        {
+            var recordedData = (from list in ProductReview select new { list.UserID, list.Review });
+            foreach (var list in recordedData)
+            {
+                Console.WriteLine(list.ToString());
+            }
+        }
     }
 }

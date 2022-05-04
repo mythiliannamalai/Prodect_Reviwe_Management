@@ -48,6 +48,7 @@ namespace ProductReviewManagementlinq
                 Console.WriteLine("4: For Retrive count of Review Present");
                 Console.WriteLine("5: For Retrive ProductId And Review");
                 Console.WriteLine("6: For Skip Top Five Records");
+                Console.WriteLine("7: For Retrive UserId And Review");
                 Console.WriteLine("0.Exit");
                 Console.WriteLine("Enter your option");
                 option = int.Parse(Console.ReadLine());
@@ -71,6 +72,9 @@ namespace ProductReviewManagementlinq
                         break;
                     case 6:
                         productReview.SkipTopFive(productReviewList);
+                        break;
+                    case 7:
+                        productReview.RetrieveUserIDAndReview(productReviewList);
                         break;
                     case 0:
                         Console.WriteLine("****EXIT*****");
