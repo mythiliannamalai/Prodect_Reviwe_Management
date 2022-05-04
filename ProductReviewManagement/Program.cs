@@ -38,8 +38,9 @@ namespace ProductReviewManagementlinq
               new ProductReview() { ProductID = 23, UserID = 23, Rating = 2, Review = "good", IsLike = true },
               new ProductReview() { ProductID = 24, UserID = 24, Rating = 4, Review = "average", IsLike = true },
               new ProductReview() { ProductID = 25, UserID = 25, Rating = 2, Review = "average", IsLike = true }             
-            };         
-            
+            };
+            Console.WriteLine("Add Product Review");
+            productReview.AddProductReviewManagement();
         }
     }
 }
