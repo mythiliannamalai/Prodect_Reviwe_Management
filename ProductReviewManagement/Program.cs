@@ -39,8 +39,30 @@ namespace ProductReviewManagementlinq
               new ProductReview() { ProductID = 24, UserID = 24, Rating = 4, Review = "average", IsLike = true },
               new ProductReview() { ProductID = 25, UserID = 25, Rating = 2, Review = "average", IsLike = true }             
             };
-            Console.WriteLine("Add Product Review");
-            productReview.AddProductReviewManagement();
+            int option = 0;
+            do
+            {
+                Console.WriteLine("1: For Add Product Review");
+                Console.WriteLine("2: For Display the Product Review");
+                Console.WriteLine("0.Exit");
+                Console.WriteLine("Enter your option");
+                option = int.Parse(Console.ReadLine());
+                switch (option)
+                {
+                    case 1:
+                        productReview.AddProductReviewManagement();
+                        break;
+                    case 2:
+                        productReview.DisplayProductReviewList(productReviewList);
+                        break;
+                    case 0:
+                        Console.WriteLine("****EXIT*****");
+                        break;
+                    default:
+                        Console.WriteLine("Invalid input please try again..");
+                        break;
+                }
+            }while(option!=0);
         }
     }
 }

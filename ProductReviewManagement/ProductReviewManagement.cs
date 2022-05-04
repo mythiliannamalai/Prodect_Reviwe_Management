@@ -13,6 +13,7 @@ namespace ProductReviewManagementlinq
         {
             ProductReviewList = new List<ProductReview>();
         }
+        //UC-1 Add product review
         public void AddProductReviewManagement()
         {
             ProductReviewList.Add(new ProductReview() { ProductID = 1, UserID = 1, Rating = 1, Review = "good", IsLike = true });
@@ -41,6 +42,16 @@ namespace ProductReviewManagementlinq
             ProductReviewList.Add(new ProductReview() { ProductID = 24, UserID = 24, Rating = 4, Review = "average", IsLike = true });
             ProductReviewList.Add(new ProductReview() { ProductID = 25, UserID = 25, Rating = 2, Review = "average", IsLike = true });
             Console.WriteLine("Product Review is Added");
-        }        
+        }
+        //UC-2 Display product review
+        public void DisplayProductReviewList(List<ProductReview> ProductsReviewList)
+        {
+            foreach (var ProductReview in ProductReviewList)
+            {
+                Console.WriteLine("Product ID: {0}, \nUser ID: {1}, \nRating: {2}, \nReview: {3}, " +
+                "\nIs Like: {4} \n", ProductReview.ProductID, ProductReview.UserID, ProductReview.Rating, ProductReview.Review,
+                ProductReview.IsLike);
+            }
+        }
     }
 }
