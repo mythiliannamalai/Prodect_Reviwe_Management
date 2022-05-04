@@ -64,5 +64,20 @@ namespace ProductReviewManagementlinq
                 recordedRecord.IsLike);
             }
         }
+        //UC-3 Management - Retrieve all record from the list who’s rating are greater then 3
+        public void SelectedRecords(List<ProductReview> ProductReview)
+        {
+            var recordedData = from productReviews in ProductReview
+                               where (productReviews.ProductID == 1 ||
+                               productReviews.ProductID == 4 ||
+                               productReviews.ProductID == 9) && (productReviews.Rating > 3)
+                               select productReviews;
+
+            foreach (var list in recordedData)
+            {
+                Console.WriteLine("ProductId:- " + list.ProductID + " " + "UserId:- " + list.UserID
+                + " " + "Rating:- " + list.Rating + " " + "Review:- " + list.Review + " " + "IsLike :- " + list.IsLike);
+            }
+        }
     }
 }
