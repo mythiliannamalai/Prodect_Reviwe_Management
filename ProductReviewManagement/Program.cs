@@ -55,6 +55,7 @@ namespace ProductReviewManagementlinq
                 Console.WriteLine("7: For Retrive UserId And Review");
                 Console.WriteLine("8.For add values in DataTable");
                 Console.WriteLine("9. For retrive all records");
+                Console.WriteLine("10. For average rating");
                 Console.WriteLine("0.Exit");
                 Console.WriteLine("Enter your option");
                 option = int.Parse(Console.ReadLine());
@@ -87,6 +88,9 @@ namespace ProductReviewManagementlinq
                         break;
                     case 9:
                         productReview.DisplayAllRecords();
+                        break;
+                    case 10:
+                        productReview.SelecteAverageReview(productReviewList);
                         break;
                     case 0:
                         Console.WriteLine("****EXIT*****");

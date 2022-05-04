@@ -170,6 +170,15 @@ namespace ProductReviewManagementlinq
                 Console.WriteLine();
             }
         }
-        
-}
+        public void SelecteAverageReview(List<ProductReview> ProductReview)
+        {
+            var recordedData = from productReviews in ProductReview
+                               where (productReviews.Review == "average" )select new { productReviews.Rating};
+
+            foreach (var list in recordedData)
+            {
+                Console.WriteLine("Rating:- " + list.Rating);
+            }
+        }
+    }
 }
