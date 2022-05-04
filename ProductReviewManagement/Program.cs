@@ -43,7 +43,7 @@ namespace ProductReviewManagementlinq
             do
             {
                 Console.WriteLine("1: For Add Product Review");
-                Console.WriteLine("2: For Display the Product Review");
+                Console.WriteLine("2: For Retrieve the Top three Review ");
                 Console.WriteLine("0.Exit");
                 Console.WriteLine("Enter your option");
                 option = int.Parse(Console.ReadLine());
@@ -51,9 +51,10 @@ namespace ProductReviewManagementlinq
                 {
                     case 1:
                         productReview.AddProductReviewManagement();
+                        productReview.DisplayProductReviewList(productReviewList);
                         break;
                     case 2:
-                        productReview.DisplayProductReviewList(productReviewList);
+                        productReview.RetrieveTopThreeRecords(productReviewList);
                         break;
                     case 0:
                         Console.WriteLine("****EXIT*****");
