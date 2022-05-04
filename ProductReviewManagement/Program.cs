@@ -46,6 +46,7 @@ namespace ProductReviewManagementlinq
                 Console.WriteLine("2: For Retrieve the Top three Review ");
                 Console.WriteLine("3: For Retrive who's rating is greater than three");
                 Console.WriteLine("4: For Retrive count of Review Present");
+                Console.WriteLine("5: For Retrive ProductId And Review");
                 Console.WriteLine("0.Exit");
                 Console.WriteLine("Enter your option");
                 option = int.Parse(Console.ReadLine());
@@ -63,6 +64,9 @@ namespace ProductReviewManagementlinq
                         break;
                     case 4:
                         productReview.RetrieveProductID(productReviewList);
+                        break;
+                    case 5:
+                        productReview.RetrieveProductIDAndReview(productReviewList);
                         break;
                     case 0:
                         Console.WriteLine("****EXIT*****");

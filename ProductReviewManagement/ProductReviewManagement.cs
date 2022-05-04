@@ -91,5 +91,14 @@ namespace ProductReviewManagementlinq
                 count++;                
             }
         }
+        //UC-5 Retrieve only productId and review from the list for all records.
+        public void RetrieveProductIDAndReview(List<ProductReview> ProductReview)
+        {
+            var recordedData = (from list in ProductReview select new { list.ProductID, list.Review });
+            foreach (var list in recordedData)
+            {
+                Console.WriteLine(list.ToString());
+            }
+        }
     }
 }
