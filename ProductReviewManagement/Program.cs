@@ -38,7 +38,7 @@ namespace ProductReviewManagementlinq
               new ProductReview() { ProductID = 23, UserID = 23, Rating = 2, Review = "good", IsLike = true },
               new ProductReview() { ProductID = 24, UserID = 24, Rating = 4, Review = "average", IsLike = true },
               new ProductReview() { ProductID = 25, UserID = 25, Rating = 2, Review = "average", IsLike = true }             
-            };
+            };            
             int option = 0;
             do
             {
@@ -49,6 +49,7 @@ namespace ProductReviewManagementlinq
                 Console.WriteLine("5: For Retrive ProductId And Review");
                 Console.WriteLine("6: For Skip Top Five Records");
                 Console.WriteLine("7: For Retrive UserId And Review");
+                Console.WriteLine("8.For add values in DataTable");
                 Console.WriteLine("0.Exit");
                 Console.WriteLine("Enter your option");
                 option = int.Parse(Console.ReadLine());
@@ -75,6 +76,9 @@ namespace ProductReviewManagementlinq
                         break;
                     case 7:
                         productReview.RetrieveUserIDAndReview(productReviewList);
+                        break;
+                    case 8:
+                        productReview.AddProductDetailsInDataTable();
                         break;
                     case 0:
                         Console.WriteLine("****EXIT*****");

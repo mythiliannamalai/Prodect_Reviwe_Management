@@ -3,15 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 
 namespace ProductReviewManagementlinq
 {
     public class ProductReviewManagement
     {
         List<ProductReview> ProductReviewList;
+        DataTable dataTable = new DataTable();
         public ProductReviewManagement()
         {
             ProductReviewList = new List<ProductReview>();
+            dataTable.Columns.Add("ProductID", typeof(int));
+            dataTable.Columns.Add("UserID", typeof(int));
+            dataTable.Columns.Add("Rating", typeof(int));
+            dataTable.Columns.Add("Review", typeof(string));
+            dataTable.Columns.Add("IsLike", typeof(bool));            
         }
         //UC-1 Add product review
         public void AddProductReviewManagement()
@@ -118,6 +125,37 @@ namespace ProductReviewManagementlinq
             {
                 Console.WriteLine(list.ToString());
             }
+        }
+        //UC-8 Create DataTable using C# and Add ProductID, UserID, Rating, Review and isLike fields in that.
+        //- Add 25 default values in datatable list which we have UC created
+        public void AddProductDetailsInDataTable()
+        {           
+            dataTable.Rows.Add (1,1,1,"good",true);
+            dataTable.Rows.Add(2,2,1,"good",true);
+            dataTable.Rows.Add(3,3,1,"good",true);
+            dataTable.Rows.Add( 4,4,4,"good",true );
+            dataTable.Rows.Add(5,5,2,"nice",false );
+            dataTable.Rows.Add(6,6,2,"bad",false);
+            dataTable.Rows.Add(7,7,2,"bad",false );
+            dataTable.Rows.Add(8,8,2,"good",true);
+            dataTable.Rows.Add(9,9,3,"bad",false);
+            dataTable.Rows.Add(10,10,3,"bad",false);
+            dataTable.Rows.Add(11,11,1,"good",true);
+            dataTable.Rows.Add(12,12,1,"good",true);
+            dataTable.Rows.Add(13,13,1,"good",true);
+            dataTable.Rows.Add(14,14,2,"very bad",false);
+            dataTable.Rows.Add(15,15,2,"bad",false);
+            dataTable.Rows.Add(16,16,2,"bad",false);
+            dataTable.Rows.Add(17,17,2,"bad",false);
+            dataTable.Rows.Add(18,18,2,"average",true);
+            dataTable.Rows.Add(19,19,3,"bad",false);
+            dataTable.Rows.Add(20,20,3,"bad",false);
+            dataTable.Rows.Add(21,21,2,"bad",false);
+            dataTable.Rows.Add(22,22,2,"bad",false);
+            dataTable.Rows.Add(23,23,2,"good",true);
+            dataTable.Rows.Add(24,24,4,"average",true);
+            dataTable.Rows.Add(25,25, 2,"average",true);
+            Console.WriteLine("The Product details are added...");
         }
     }
 }
