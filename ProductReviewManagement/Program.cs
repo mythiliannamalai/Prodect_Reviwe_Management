@@ -1,4 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Data;
 
 namespace ProductReviewManagementlinq
@@ -50,6 +54,7 @@ namespace ProductReviewManagementlinq
                 Console.WriteLine("6: For Skip Top Five Records");
                 Console.WriteLine("7: For Retrive UserId And Review");
                 Console.WriteLine("8.For add values in DataTable");
+                Console.WriteLine("9. For retrive all records");
                 Console.WriteLine("0.Exit");
                 Console.WriteLine("Enter your option");
                 option = int.Parse(Console.ReadLine());
@@ -79,6 +84,9 @@ namespace ProductReviewManagementlinq
                         break;
                     case 8:
                         productReview.AddProductDetailsInDataTable();
+                        break;
+                    case 9:
+                        productReview.DisplayAllRecords();
                         break;
                     case 0:
                         Console.WriteLine("****EXIT*****");

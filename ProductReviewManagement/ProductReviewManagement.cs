@@ -10,7 +10,7 @@ namespace ProductReviewManagementlinq
     public class ProductReviewManagement
     {
         List<ProductReview> ProductReviewList;
-        DataTable dataTable = new DataTable();
+        DataTable dataTable = new DataTable();        
         public ProductReviewManagement()
         {
             ProductReviewList = new List<ProductReview>();
@@ -154,8 +154,22 @@ namespace ProductReviewManagementlinq
             dataTable.Rows.Add(22,22,2,"bad",false);
             dataTable.Rows.Add(23,23,2,"good",true);
             dataTable.Rows.Add(24,24,4,"average",true);
-            dataTable.Rows.Add(25,25, 2,"average",true);
+            dataTable.Rows.Add(25,25, 2,"average",true);           
             Console.WriteLine("The Product details are added...");
         }
-    }
+        //UC-9 Revrive all records
+        public void DisplayAllRecords()
+        {
+            foreach (var records in dataTable.AsEnumerable())
+            {
+                Console.WriteLine("ProductID:" + records.Field<int>("ProductID"));
+                Console.WriteLine("UserID:" + records.Field<int>("UserID"));
+                Console.WriteLine("Rating:" + records.Field<int>("Rating"));
+                Console.WriteLine("Review:" + records.Field<string>("Review"));
+                Console.WriteLine("IsLike:" + records.Field<bool>("IsLike"));
+                Console.WriteLine();
+            }
+        }
+        
+}
 }
